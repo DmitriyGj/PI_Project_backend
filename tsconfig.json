@@ -1,21 +1,44 @@
 {
+  "exclude": [
+    "node_modules",
+    "static"
+  ],
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
-    "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    
+    "alwaysStrict": true,
+    "noImplicitAny": true,
+    
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    
+    "baseUrl": "./src",
+    "paths": {
+      "@controllers/*": ["controllers/*"],
+      "@models/*": ["models/*[js ts]"],
+      "@utils/*": ["utils/*"],
+      "@middlewares":["middlewares/*"],
+      "@providers":["providers/*"]
+    },
+    "isolatedModules": true,
+
+    "noEmit": true,
   }
 }
+
