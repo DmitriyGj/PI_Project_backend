@@ -15,6 +15,7 @@
 ## middlewares/@middlewares - папка с общими промежуточными функциями, которые чаще всего используются для проверки авторизоваости пользователя
 ## models/@models - модели для работы с typeorm
 ## providers/@providers - папка с провайдерами (сервисами) - сервисы, репозитории, фабрики, хелперы для работы с бд
+## @utils - вспопогательные функции (перевод даты в нужный формат, функция считывания массива или одного объекта)
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
