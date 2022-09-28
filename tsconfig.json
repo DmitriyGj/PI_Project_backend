@@ -1,8 +1,4 @@
 {
-  "exclude": [
-    "node_modules",
-    "static"
-  ],
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
@@ -25,7 +21,7 @@
     
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
+
     "allowJs": true,
     
     "baseUrl": "./src",
@@ -36,9 +32,6 @@
       "@middlewares":["middlewares/*"],
       "@providers":["providers/*"]
     },
-    "isolatedModules": true,
-
-    "noEmit": true,
   }
 }
 
