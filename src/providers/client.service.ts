@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { ClientEntity } from "../models/client/client.entity";
 import { Client } from "../models/client/client.interface";
-import { Repository } from "typeorm";
+import { Repository, UpdateResult } from "typeorm";
 import { from, Observable } from "rxjs";
 
 @Injectable()
@@ -11,13 +11,19 @@ export class ClientService {
         @InjectRepository(ClientEntity) 
         private readonly clientRepository: Repository<ClientEntity>
     ){}
-    
+    findAll(): Observable<Client[]> {
+        return from(this.clientRepository.find());
+    }
+
+    findById(id: number): Observable<Client> {
+        return from(this.clientRepository.findOneBy({ id }));
+    }
+   
     create(client: Client): Observable<Client> {
         return from(this.clientRepository.save(client));
     }
 
-    findAll(): Observable<Client[]>{
-        return from(this.clientRepository.find());
+    update(id: number, client: Client): Observable<UpdateResult> {
+        return from(this.clientRepository.update(id, client));
     }
-
 }
