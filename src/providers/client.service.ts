@@ -1,17 +1,23 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { ClientPostEntity } from ".././models/client/post.entity";
-import { ClientPost } from ".././models/client/post.interface";
+import { ClientEntity } from "../models/client/client.entity";
+import { Client } from "../models/client/client.interface";
 import { Repository } from "typeorm";
 import { from, Observable } from "rxjs";
 
 @Injectable()
 export class ClientService {
     constructor(
-        @InjectRepository(ClientPostEntity)
-        private readonly clientPostRepository: Repository<ClientPostEntity>){}
+        @InjectRepository(ClientEntity) 
+        private readonly clientRepository: Repository<ClientEntity>
+    ){}
     
-    createPost(clientPost: ClientPost): Observable<ClientPost> {
-        return from(this.clientPostRepository.save(clientPost));
+    create(client: Client): Observable<Client> {
+        return from(this.clientRepository.save(client));
     }
+
+    findAll(): Observable<Client[]>{
+        return from(this.clientRepository.find());
+    }
+
 }

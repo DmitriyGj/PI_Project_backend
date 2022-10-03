@@ -1,12 +1,13 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ClientPostEntity } from ".././models/client/post.entity";
+
+import { ClientEntity } from "../models/client/client.entity";
 import { ClientService } from ".././providers/client.service";
 import { ClientController } from ".././controllers/client/client.controller";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([ClientPostEntity])
+        TypeOrmModule.forFeature([ClientEntity])
     ],
     providers: [
         ClientService
@@ -15,6 +16,4 @@ import { ClientController } from ".././controllers/client/client.controller";
         ClientController
     ]
 })
-export class ClientModule {
-
-}
+export class ClientModule { }
