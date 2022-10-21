@@ -24,8 +24,17 @@ import {
       database: process.env.POSTGRES_DATABASE,
       autoLoadEntities: true,
       synchronize: true
+      
+      // type: 'postgres',
+      // host: process.env.HEROKU_URL,
+      // port: parseInt(<string>process.env.HEROKU_PORT),
+      // username: process.env.HEROKU_USER,
+      // password: process.env.HEROKU_PASSWORD,
+      // database: process.env.HEROKU_DATABASE,
+      // autoLoadEntities: true,
+      // synchronize: true
     }),
-    ClientModule
+    // ClientModule
   ],
   controllers: [
     AppController, 
