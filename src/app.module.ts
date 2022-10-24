@@ -34,7 +34,7 @@ import {
       // autoLoadEntities: true,
       // synchronize: true
     }),
-    // ClientModule
+    ClientModule
   ],
   controllers: [
     AppController, 
