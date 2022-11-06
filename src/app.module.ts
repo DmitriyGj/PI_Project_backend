@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { ClientModule } from './modules/client.module';
+import { MeetingModule } from './modules/meeting.module';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -18,10 +19,10 @@ import {
   imports: [
     DatabaseModule,
     ClientModule,
+    MeetingModule
   ],
   controllers: [
     AppController, 
-    MeetingController, 
   ],
   providers: [
     AppService
