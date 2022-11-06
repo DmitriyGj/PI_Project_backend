@@ -10,7 +10,7 @@ export class ClientController {
 
   }
 
-  @Get()
+  @Get('/all')
   findAll(): Observable<Client[]> {
     return this.clientService.findAll();
   }
