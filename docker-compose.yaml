@@ -7,7 +7,7 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_HOST=127.0.0.1
+      - POSTGRES_HOST=localhost
       - POSTGRES_PORT=5432
       - POSTGRES_USER=postgres
       - POSTGRES_DATABASE=pi_project_database
@@ -18,7 +18,7 @@ services:
     container_name: pgadmin_pis
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: noemail@noemail.com
+      PGADMIN_DEFAULT_EMAIL: postgres@email.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "5050:80"
