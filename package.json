@@ -39,6 +39,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/swagger": "^6.1.2",
     "@nestjs/typeorm": "^9.0.1",
+    "bcryptjs": "^2.4.3",
     "dayjs": "^1.11.5",
     "dotenv": "^16.0.2",
     "mysql2": "^2.3.3",

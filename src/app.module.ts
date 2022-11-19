@@ -14,18 +14,24 @@ import {
   MeetingController,
   ClientController
  } from './controllers/index';
+import { AuthModule } from './auth/auth.module';
+import { UserService } from './providers/user.service';
+import { UserController } from './user/user.controller';
 
 @Module({
   imports: [
     DatabaseModule,
     ClientModule,
-    MeetingModule
+    MeetingModule,
+    AuthModule
   ],
   controllers: [
-    AppController, 
+    AppController,
+    UserController, 
   ],
   providers: [
-    AppService
+    AppService,
+    UserService
   ],
 })
 export class AppModule {}
