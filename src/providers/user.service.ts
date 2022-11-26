@@ -30,4 +30,8 @@ export class UserService {
     delete(id: number): Observable<DeleteResult> {
         return from(this.userRepository.delete({id}))
     }
+
+    findByEmail(email: string) : Observable<User> {
+        return from(this.userRepository.findOneBy({email}));
+    }
 }

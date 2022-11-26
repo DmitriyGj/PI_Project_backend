@@ -17,13 +17,15 @@ import {
 import { AuthModule } from './auth/auth.module';
 import { UserService } from './providers/user.service';
 import { UserController } from './user/user.controller';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
     DatabaseModule,
     ClientModule,
     MeetingModule,
-    AuthModule
+    AuthModule,
+    UserModule
   ],
   controllers: [
     AppController,

@@ -11,12 +11,12 @@ export class AuthController {
     }
 
     @Post('/login')
-    login(@Body() user: User): Observable<User> {
+    login(@Body() user: User): Promise<{token : string}> {
     return this.authService.login(user);
     }
 
     @Post('/registration')
-    registration(@Body() user: User): Observable<User> {
+    registration(@Body() user: User): Promise<{token : string}> {
     return this.authService.registration(user);
     }
 
